@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Help</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Help</h1>
+        <p>Здравствуйте! Если вы здесь, по всей видимости вам потребовалась помощь. Я готов любезно её вам оказать.</p>
+        <p>На данной странице вы можете сортировать массив чисел. На выбор вам даётся:</p>
+        <ul>
+            <li>Ручной ввод: массив забивается вручную через пробел</li>
+            <li>Случайный массив: вами выбирается количество элементов, а система генерирует случайные значения</li>
+        </ul>
+        <p>Также вы можете очистить историю сортировок.</p>
+
+        <div class="text-center">
+            <form action="/" method="GET">
+                <button type="submit">Назад</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

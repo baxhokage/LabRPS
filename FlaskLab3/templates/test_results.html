@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты тестирования</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты тестирования</h1>
+        <p>Размер массива: {{ test_size }}</p>
+        <p>Время выполнения сортировки: {{ execution_time }} секунд</p>
+        <h3>Оригинальный массив:</h3>
+        <p>{{ original }}</p>
+        <h3>Отсортированный массив:</h3>
+        <p>{{ sorted }}</p>
+
+        <div class="text-center" style="margin-top: 20px;">
+            <a href="/">Назад на главную</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сортировка массива</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+    <div class="container"> 
+        <h1>Сортировка массива</h1>
+
+        <!-- Форма для ввода случайного массива -->
+        <form method="POST" action="/random" class="random-form">
+            <label for="size">Размер случайного массива:</label>
+            <input type="number" id="size" name="size" min="1" placeholder="10" required>
+            <button type="submit">Сгенерировать</button>
+        </form>
+
+        <!-- Основная форма сортировки -->
+        <form method="POST" action="/sort" class="sort-form">
+            <label for="array">Введите массив:</label>
+            <input type="text" id="array" name="array" value="{{ array|default('') }}" placeholder="Например: 5 3 8 1" required>
+
+            <label>Сортировать по:</label>
+            <div>
+                <label><input type="radio" name="reverse" value="false" checked> Возрастанию</label>
+                <label><input type="radio" name="reverse" value="true"> Убыванию</label>
+            </div>
+
+            <button type="submit">Сортировать</button>
+        </form>
+
+        <form method="POST" action="/test_results" style="margin-top: 20px;">
+            <label for="test_size">Введите размер массива для тестирования:</label>
+            <input type="number" id="test_size" name="test_size" placeholder="Например: 100" min="1" required>
+            <button type="submit">Запустить тест</button>
+        </form>
+
+
+        <!-- Ссылки -->
+        <div class="text-center">
+            <a href="/history">История сортировок</a> | <a href="/help">Помощь</a>
+        </div>
+
+        <!-- Вывод ошибок -->
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
